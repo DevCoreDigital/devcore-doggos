@@ -1,0 +1,14 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "sls deploy --aws-profile personal",
+    "deploy-production": "sls deploy --aws-profile personal -s production",
+    "remove": "sls remove --aws-profile personal",
+    "remove-production": "sls remove --aws-profile personal -s production"
+  },
+  "author": "",
+  "license": "ISC"
+}
