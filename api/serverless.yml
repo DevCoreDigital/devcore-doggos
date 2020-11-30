@@ -11,7 +11,7 @@ provider:
   runtime: nodejs12.x
   memorySize: 128 # Lambda Memory Allocation
   environment:
-    UNIQUE_IDENTIFIER: tcreller-unicorn
+    UNIQUE_IDENTIFIER: devcore-doggos
 
   httpApi:
     authorizers:
@@ -64,8 +64,8 @@ resources:
           Ref: ServiceUserPool
         ProviderName: 'Google'
         ProviderDetails:
-          client_id: '<your_client_id>'
-          client_secret: '<your_client_secret'
+          client_id: '674032301486-g9amn6a4pl2jc7ohjqpo4mr5khh59rcf.apps.googleusercontent.com'
+          client_secret: 'YmfMYxAfI3gH6nSpIStjLH3L'
           # EXAMPLE REFERENCES ONLY
           # client_id: '674032301486-ld4s7gc0edr9dhsu4b6ug70t2tp4enae.apps.googleusercontent.com'
           # client_secret: '1BdpY4Gx-kyNepkOMIp5xI6A'
