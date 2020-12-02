@@ -14,7 +14,6 @@ export default function Dashboard({}) {
   const [status, setStatus] = useState('Checking...');
   const [doggos, setDoggos] = useState({});
   const [doggosLoading, setDoggosLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
 
   const getHealth = useCallback(async () => {
     await API.get(API_NAME, '/health', {})
