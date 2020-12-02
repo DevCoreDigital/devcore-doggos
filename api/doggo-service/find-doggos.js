@@ -54,7 +54,7 @@ const runPost = () => {
       });
     });
     req.on('error', (e) => {
-      reject(e.message);
+      reject(JSON.parse(e));
     });
     req.write(JSON.stringify(body));
     req.end();
@@ -64,18 +64,16 @@ const runPost = () => {
 module.exports.handler = async (event) => {
   const response = await runPost()
     .then((response) => {
-      console.log('Response data: ', response.data);
       return JSON.stringify({
         isBase64Encoded: false,
         statusCode: 200,
-        body: JSON.stringify(response.data),
+        body: response.data,
         headers: {
           'Content-Type': 'application/json'
         }
       });
     })
     .catch((error) => {
-      console.log('Error: ', error);
       return error;
     });
   return response;
