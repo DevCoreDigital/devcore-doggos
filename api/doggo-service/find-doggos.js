@@ -74,7 +74,7 @@ module.exports.handler = async (event) => {
       });
     })
     .catch((error) => {
-      return error;
+      throw error;
     });
   return response;
 };
