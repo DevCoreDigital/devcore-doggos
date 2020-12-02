@@ -39,6 +39,17 @@ functions:
           method: GET
           path: /health
           authorizer: serviceAuthorizer
+  find-doggos:
+    name: rest-app-poc-find-doggos-${opt:stage, 'dev'}
+    handler: doggo-service/find-doggos.handler
+    package:
+      include:
+        - doggo-service/find-doggos.js
+    events:
+      - httpApi:
+          method: POST
+          path: /findDoggos
+          authorizer: serviceAuthorizer
 
 resources:
   Resources:

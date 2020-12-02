@@ -10,5 +10,6 @@
     "remove-production": "sls remove --aws-profile personal -s production"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {}
 }
