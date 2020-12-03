@@ -12,6 +12,7 @@ provider:
   memorySize: 128 # Lambda Memory Allocation
   environment:
     UNIQUE_IDENTIFIER: devcore-doggos
+    RESCUE_GROUP_API_KEY: wuZik2ce
 
   httpApi:
     authorizers:

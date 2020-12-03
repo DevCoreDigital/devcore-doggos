@@ -31,11 +31,12 @@ export default function Dashboard({}) {
     setDoggosLoading(true);
     API.post(API_NAME, '/findDoggos', {})
       .then((res) => {
-        const doggoList = JSON.parse(res.body);
+        const doggoList = res.body;
         setDoggos(doggoList);
         return res;
       })
       .catch((err) => {
+        console.log(err);
         setStatus('Unhealthy');
       })
       .finally(() => {
@@ -69,11 +70,12 @@ export default function Dashboard({}) {
       {!!Object.keys(doggos).length && (
         <FlatList
           data={Object.keys(doggos)}
+          keyExtractor={(item) => {
+            return doggos[item].animalId;
+          }}
           renderItem={({ item }) => {
             return (
-              <Text style={styles.doggoName} key={doggos[item].animalId}>
-                {doggos[item].animalName}
-              </Text>
+              <Text style={styles.doggoName}>{doggos[item].animalName}</Text>
             );
           }}></FlatList>
       )}

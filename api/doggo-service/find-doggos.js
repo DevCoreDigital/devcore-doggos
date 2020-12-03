@@ -2,7 +2,7 @@ const https = require('https');
 
 const runPost = () => {
   const body = {
-    apikey: 'wuZik2ce',
+    apikey: process.env.RESCUE_GROUP_API_KEY,
     objectType: 'animals',
     objectAction: 'publicSearch',
     search: {
