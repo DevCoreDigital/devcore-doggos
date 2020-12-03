@@ -12,6 +12,7 @@ provider:
   memorySize: 128 # Lambda Memory Allocation
   environment:
     UNIQUE_IDENTIFIER: devcore-doggos
+    RESCUE_GROUP_API_KEY: wuZik2ce
 
   httpApi:
     authorizers:
@@ -38,6 +39,17 @@ functions:
       - httpApi:
           method: GET
           path: /health
+          authorizer: serviceAuthorizer
+  find-doggos:
+    name: rest-app-poc-find-doggos-${opt:stage, 'dev'}
+    handler: doggo-service/find-doggos.handler
+    package:
+      include:
+        - doggo-service/find-doggos.js
+    events:
+      - httpApi:
+          method: POST
+          path: /findDoggos
           authorizer: serviceAuthorizer
 
 resources:
